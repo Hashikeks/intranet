@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ansprechpartner</title>
+  <title>Test Grid</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: transparent;
+      background-color: #1e3a8a;
+      font-family: 'Segeo UI', sans-serif;
       color: white;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
     }
 
     h1 {
@@ -20,12 +23,13 @@
 
     .team-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(6, 140px);   /* 6 Spalten = 3 normale Kartenbreiten */
+      gap: 30px;
       justify-content: center;
-      gap: 50px;
       padding: 40px;
     }
 
+    /* Karten-Design */
     .card {
       background-color: #15355d;
       border-radius: 16px;
@@ -33,6 +37,7 @@
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       text-align: center;
+      font-size: 1.2rem;
     }
 
     .card img {
@@ -57,54 +62,67 @@
       font-size: 0.9rem;
       color: #d0e2f2;
     }
+
+        /* Spezialpositionierung */
+        /* Erste Reihe */
+        .card1 {
+          grid-column: 1 / 3;
+        }
+        .card2 {
+          grid-column: 3 / 5;
+        }
+        .card3 {
+          grid-column: 5 / 7;
+        }
+
+        /* Zweite Reihe - Zwischenräume */
+        .card4 {
+          grid-column: 2 / 4;         /* Zwischen Card 1 & 2 */
+        }
+        .card5 {
+          grid-column: 4 / 6;         /* Zwischen Card 2 & 3 */
+        }
+
   </style>
 </head>
 <body>
-  <div class="team-container">
-    <!-- Diese Karte ist auskommentiert und wird nicht angezeigt -->
-<!--
-    <div class="card">
-      <img src="images/james-black.png" alt="James Black">
-      <div class="position">Commissioner</div>
-      <div class="name">James Black</div>
-      <div class="info">PD-024<br>Altes Bild</div>
+
+    /* Karteninhalt */
+    <div class="team-container">
+      <div class="card card1">
+        <img src="images/liam-jones.png" alt="Liam Jones">
+        <div class="position">Chief of Police</div>
+        <div class="name">Liam Jones</div>
+        <div class="info">PD-001</div>
     </div>
-    -->
-    
- <div class="card">
-    <img src="images/liam-jones.png" alt="Liam Jones">
-    <div class="position">Chief of Police</div>
-    <div class="name">Liam Jones</div>
-    <div class="info">PD-001</div>
-  </div>
 
- <div class="card">
-    <img src="images/jack-baecker.png" alt="Jack Baecker">
-    <div class="position">Assistant Chief of Police</div>
-    <div class="name">Jack Baecker</div>
-    <div class="info">PD-032</div>
-  </div>
-    
-<div class="card">
-    <img src="images/lara-walker.png" alt="Lara Walker">
-    <div class="position">Deputy Chief</div>
-    <div class="name">Lara Walker</div>
-    <div class="info">PD-084</div>
-  </div>
+    <div class="card card2">
+        <img src="images/jack-baecker.png" alt="Jack Baecker">
+        <div class="position">Assistant Chief of Police</div>
+        <div class="name">Jack Baecker</div>
+        <div class="info">PD-032</div>
+    </div>
 
-<div class="card">
-    <img src="images/darren-grey.png" alt="Darren Grey">
-    <div class="position">Commander</div>
-    <div class="name">Darren Grey</div>
-    <div class="info">PD-039</div>
-  </div>
+    <div class="card card3">
+        <img src="images/lara-walker.png" alt="Lara Walker">
+        <div class="position">Deputy Chief</div>
+        <div class="name">Lara Walker</div>
+        <div class="info">PD-084</div>
+    </div>
 
-<div class="card">
-    <img src="images/konstantin-esch.png" alt="Konstantin Esch">
-    <div class="position">Commander</div>
-    <div class="name">Konstantin Esch</div>
-    <div class="info">PD-026</div>
-  </div>
+    <div class="card card4">
+        <img src="images/darren-grey.png" alt="Darren Grey">
+        <div class="position">Commander</div>
+        <div class="name">Darren Grey</div>
+        <div class="info">PD-039</div>
+    </div>
+
+    <div class="card card5">
+        <img src="images/konstantin-esch.png" alt="Konstantin Esch">
+        <div class="position">Commander</div>
+        <div class="name">Konstantin Esch</div>
+        <div class="info">PD-026</div>
+    </div>
 </div>
 </body>
 </html>
