@@ -19,10 +19,10 @@
     }
 
     .team-container {
-      display: flex;
-      grid-template-columns: reapeat(3, 280px);
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 60px;
+      justify-content: center;
       padding: 40px;
     }
 
