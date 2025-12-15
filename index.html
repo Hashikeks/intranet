@@ -1,49 +1,69 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Grid</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ansprechpartner</title>
+
   <style>
     body {
-      background-color: transparent;
-      font-family: 'Segeo UI', sans-serif;
-      color: white;
       margin: 0;
-      padding: 40px;
-      display: flex;
-      justify-content: center;
-    }
-    h1, h2 {
-      text-align: center;
-      padding-top: 0px;
-      margin-bottom: 0px; /* kleiner Abstand nach unten */
-      font-size: 2.5rem;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: transparent;
       color: white;
-    }
-    .team-container {
-      display: grid;
-      grid-template-columns: repeat(6, 140px);   /* 6 Spalten = 3 normale Kartenbreiten */
-      gap: 90px;
-      justify-content: center;
-      padding: 40px;
     }
 
-    /* Karten-Design */
+    /* äußerer Wrapper → VOLLE BREITE + SCROLL */
+    .scroll-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 15px;
+    }
+
+    /* scrollbar styling */
+    .scroll-wrapper::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .scroll-wrapper::-webkit-scrollbar-thumb {
+      background: #80bfff;
+      border-radius: 10px;
+    }
+
+    .scroll-wrapper::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* innerer Wrapper → ZENTRIERUNG */
+    .team-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+      width: max-content; /* WICHTIG */
+      margin: 0 auto;
+    }
+
     .card {
+      flex: 0 0 280px;
       background-color: #15355d;
       border-radius: 16px;
-      width: 280px;
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       text-align: center;
-      font-size: 1.2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
     .card img {
       width: 100%;
       border-radius: 12px;
       margin-bottom: 15px;
+      display: block;
     }
 
     .position {
@@ -62,67 +82,51 @@
       font-size: 0.9rem;
       color: #d0e2f2;
     }
-
-        /* Spezialpositionierung */
-        /* Erste Reihe */
-        .card1 {
-          grid-column: 1 / 3;
-        }
-        .card2 {
-          grid-column: 3 / 5;
-        }
-        .card3 {
-          grid-column: 5 / 7;
-        }
-
-        /* Zweite Reihe - Zwischenraeume */
-        .card4 {
-          grid-column: 2 / 4;         /* Zwischen Card 1 & 2 */
-        }
-        .card5 { 
-          grid-column: 4 / 6;         /* Zwischen Card 2 & 3 */
-        }
-        
-                    /* Karteninhalt */
   </style>
 </head>
+
 <body>
 
+  <div class="scroll-wrapper">
     <div class="team-container">
-      <div class="card card1">
+
+      <div class="card">
         <img src="images/jack-baecker2.png" alt="jack-baecker2">
         <div class="position">Chief of Police</div>
         <div class="name">Jack Baecker</div>
         <div class="info">PD-032</div>
-    </div>
+      </div>
 
-    <div class="card card2">
+      <div class="card">
         <img src="images/platzhalter.png" alt="platzhalter">
         <div class="position">Assistant Chief of Police</div>
         <div class="name">Lara Walker</div>
         <div class="info">PD-084</div>
-    </div>
+      </div>
 
-    <div class="card card3">
+      <div class="card">
         <img src="images/alfred-grady2.png" alt="alfred-grady2">
         <div class="position">Deputy Chief of Police</div>
         <div class="name">Alfred Grady</div>
         <div class="info">PD-025</div>
-    </div>
+      </div>
 
-    <div class="card card4">
+      <div class="card">
         <img src="images/darren-grey.png" alt="Darren Grey">
         <div class="position">Police Commander</div>
         <div class="name">Darren Grey</div>
         <div class="info">PD-039</div>
-    </div>
+      </div>
 
-    <div class="card card5">
+      <div class="card">
         <img src="images/platzhalter.png" alt="platzhalter">
         <div class="position">Police Commander</div>
         <div class="name">Markus Mertens</div>
         <div class="info">PD-098</div>
+      </div>
+
     </div>
-</div>
+  </div>
+
 </body>
 </html>
