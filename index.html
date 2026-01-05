@@ -59,10 +59,16 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
+    /* 🔒 Einheitliche Bildgröße – KEIN Verrutschen */
     .card img {
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      height: 420px;              /* feste Höhe */
+      max-width: 718px;
+      max-height: 618px;
+      object-fit: cover;          /* Bild füllt Fläche */
+      object-position: center;    /* zentriert */
+      border-radius: 14px;
+      margin-bottom: 18px;
       display: block;
     }
 
@@ -98,7 +104,7 @@
       </div>
 
       <div class="card">
-        <img src="images/platzhalter.png" alt="platzhalter">
+        <img src="images/platzhalter.jpg" alt="lara-walker2">
         <div class="position">Assistant Chief of Police</div>
         <div class="name">Lara Walker</div>
         <div class="info">PD-084</div>
@@ -130,3 +136,4 @@
 
 </body>
 </html>
+
